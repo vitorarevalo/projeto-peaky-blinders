@@ -14,6 +14,7 @@ htmml, body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -59,11 +60,97 @@ li#item{
 }
 
 
-nav ul li a{
+.link{
+    position: relative;
     color: white;
     text-decoration: none;
 }
 
-nav ul li a:hover{
+.link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 60%;
+    height: 1px;
+    background-color: red;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
 
+.link:hover{
+    color: red;
+    transition: 0.3s;
+}
+
+.link:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+
+#first-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    /* background-color: #C81D25; */
+    height: 65vh;
+    margin-left: 3%;
+}
+
+h1#titulo{
+    font-family: 'Roman', serif;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 4.5em;
+    width: 500px;
+}
+
+
+.par{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    width: 450px;
+    font-size: 1.4em;
+}
+
+#exp{
+    position: relative;
+    font-size: 1.3em;
+    background-color: #df0913;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+#exp::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 50%;
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+#exp:hover{
+    background-color: #e41d27;
+    transition: 0.3s;
+}
+
+#exp:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s;
 }
